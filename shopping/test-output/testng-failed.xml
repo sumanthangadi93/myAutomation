@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)" preserve-order="true">
     <classes>
-      <class name="com.qa.shopping.TestClass">
+      <class name="com.qa.shopping.NavigateToUrl">
         <methods>
-          <include name="getUrl"/>
+          <include name="launchUrl"/>
         </methods>
-      </class> <!-- com.qa.shopping.TestClass -->
+      </class> <!-- com.qa.shopping.NavigateToUrl -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

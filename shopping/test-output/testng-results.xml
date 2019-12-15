@@ -1,11 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="0" passed="0">
+<testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Failed suite [Default suite]" duration-ms="0" started-at="2019-12-14T13:20:54Z" finished-at="2019-12-14T13:20:54Z">
+  <suite name="Default suite" duration-ms="13512" started-at="2019-12-15T13:00:13Z" finished-at="2019-12-15T13:00:26Z">
     <groups>
     </groups>
-    <test name="Default test(failed)" duration-ms="0" started-at="2019-12-14T13:20:54Z" finished-at="2019-12-14T13:20:54Z">
-    </test> <!-- Default test(failed) -->
-  </suite> <!-- Failed suite [Default suite] -->
+    <test name="Default test" duration-ms="13512" started-at="2019-12-15T13:00:13Z" finished-at="2019-12-15T13:00:26Z">
+      <class name="com.qa.shopping.NavigateToUrl">
+        <test-method status="FAIL" signature="launchUrl()[pri:0, instance:com.qa.shopping.NavigateToUrl@39fb3ab6]" name="launchUrl" duration-ms="13493" started-at="2019-12-15T13:00:13Z" finished-at="2019-12-15T13:00:26Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected:<null> but was:<Online Shopping for Women, Men, Kids Fashion & Lifestyle - Myntra>]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected:<null> but was:<Online Shopping for Women, Men, Kids Fashion & Lifestyle - Myntra>
+	at org.testng.Assert.fail(Assert.java:89)
+	at org.testng.Assert.failNotEquals(Assert.java:489)
+	at org.testng.Assert.assertEquals(Assert.java:118)
+	at org.testng.Assert.assertEquals(Assert.java:171)
+	at org.testng.Assert.assertEquals(Assert.java:181)
+	at com.qa.shopping.NavigateToUrl.launchUrl(NavigateToUrl.java:17)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:702)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:894)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1219)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:768)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:87)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1188)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1113)
+	at org.testng.TestNG.run(TestNG.java:1025)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+        </test-method> <!-- launchUrl -->
+      </class> <!-- com.qa.shopping.NavigateToUrl -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
