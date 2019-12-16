@@ -19,32 +19,16 @@ public class BaseTest {
 	 static FileInputStream fis;
 	static WebDriver driver;
 	static Properties prop;
+	static String browserName;
 	
-	public static void  MygetProperty() throws IOException {
-		Properties propy = new Properties();
-		FileInputStream myfile = new FileInputStream("C:\\Users\\Sumanth Angadi\\eclipse-workspace-oxygen\\shopping\\src\\main\\java\\resourceUtils\\data.properties");
-		
-		propy.load(myfile);
-		 		System.out.println(propy.getProperty("appTitle"));
-		//return propy.getProperty(key);
-		
-	}
-	
-	public static WebDriver initializeDriver()  {
-		
-		//System.setProperty("webdriver.chrome.driver","C:\\Users\\Sumanth Angadi\\Downloads\\chromedriver_win32\\Chromedriver.exe");
-		//System.setProperty("webdriver.gecko.driver","C:\\Users\\Sumanth Angadi\\Downloads\\geckodriver-v0.26.0-win64\\geckodriver.exe");
-				
+	public static String getProperty(String key) {		
 		try {
-			
-			fis = new FileInputStream("C:\\Users\\Sumanth Angadi\\eclipse-workspace-oxygen\\shopping\\src\\main\\java\\resourceUtils\\data.properties");
-		} 
-		catch (FileNotFoundException e1) {
-			
+			fis = new FileInputStream("C:\\Users\\Sumanth Angadi\\git\\repository\\shopping\\src\\main\\java\\resourceUtils\\data.properties");
+		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
-			System.out.println("File not found");
+			e.printStackTrace();
 		}
-		 prop = new Properties();
+		prop = new Properties();
 		
 		try {
 			prop.load(fis);
@@ -52,31 +36,30 @@ public class BaseTest {
 			// TODO Auto-generated catch block
 			System.out.println("Cannot load the file");
 		}
-		System.out.println(prop.getProperty("appTitle"));
-		String browserName = prop.getProperty("browser");
 		
-		if(browserName.equalsIgnoreCase("chrome")) {
-			
+		return prop.getProperty(key);		
+	}
+	
+	
+	public static WebDriver initializeDriver()  {
+		
+		browserName=getProperty("browser");
+		
+		if(browserName.equalsIgnoreCase("chrome")) {			
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--disable-notifications");
 			System.setProperty("webdriver.chrome.driver","C:\\Users\\Sumanth Angadi\\Downloads\\chromedriver_win32\\Chromedriver.exe");
-			driver = new ChromeDriver(options);
-			
-		}
-		
-		else if (browserName.equalsIgnoreCase("firefox")) {
-			
+			driver = new ChromeDriver(options);			
+		}else if (browserName.equalsIgnoreCase("firefox")) {			
 			System.setProperty("webdriver.gecko.driver","C:\\Users\\Sumanth Angadi\\Downloads\\geckodriver-v0.26.0-win64\\geckodriver.exe");
-			driver = new FirefoxDriver();
-			
-		}
-		
-		driver.manage().window().maximize();
+			driver = new FirefoxDriver();			
+		}		
+		//driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.get("https://www.myntra.com");
-	
+		
 		return driver;
+	
 	}
 	
 	

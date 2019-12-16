@@ -5,7 +5,9 @@
     <classes>
       <class name="com.qa.shopping.NavigateToUrl">
         <methods>
-          <include name="launchUrl"/>
+          <include name="tearDown"/>
+          <include name="loginUser"/>
+          <include name="getTillApp"/>
         </methods>
       </class> <!-- com.qa.shopping.NavigateToUrl -->
     </classes>
